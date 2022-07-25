@@ -1,0 +1,160 @@
+﻿@page
+@model Kurs_final.Pages.Patients.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="main_home">
+        <div class="container_home">
+            <div class="head_home">
+                <div class="logo_home">
+                    <img src="~/images/logo2.png" />
+                    <h2> St. Chill Hospital </h2>
+                </div>
+                <div class="logined_home">
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
+                        <i class="fa fa-user" aria-hidden="true"></i> @UserManager.GetUserName(User)
+                        <button type="submit"> &nbsp E X I T </button>
+                    </form>
+                </div>
+            </div>
+            <div class="central_home">
+                <div class="menu_home">
+                    <ul class="accordion-menu">
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Home">News</a></li>
+                                <li><a asp-page="/Error">Schedule</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-database" aria-hidden="true"></i> Database
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Doctors/Index">List of doctors</a></li>
+                                <li><a asp-page="/Patients/Index">List of patients</a></li>
+                                <li><a asp-page="/Error">My patients</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Error"><i class="fa fa-address-card" aria-hidden="true"></i> My profile </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Contact"><i class="fa fa-phone-square" aria-hidden="true"></i> Contacts </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="information_home">
+                    <h3 class="add_head"> Edit patient </h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="Patient.ID" />
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Name" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Name" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Birthday" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Birthday" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Birthday" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Chamber" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Chamber" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Chamber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Telephone" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Telephone" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Telephone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Adress" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Adress" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Adress" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Status" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Status" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Status" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-label">
+                                        <label asp-for="Patient.Doctor" class="control-label"></label>
+                                    </div>
+                                    <div class="form-input">
+                                        <input asp-for="Patient.Doctor" class="form-control" />
+                                    </div>
+                                    <span asp-validation-for="Patient.Doctor" class="text-danger"></span>
+                                </div>
+                                <div class="form-button">
+                                    <input type="submit" value="Save" class="btn-btn-default" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    @*<div>
+                            <a asp-page="Index">Back to List</a>
+                        </div>*@
+
+                </div>
+                <div class="other_home">
+
+                </div>
+            </div>
+            <div class="adress_home">
+                Riga, Maza Zoltides iela 14a <br />
+                +37128309993 <br />
+                LV-1029
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+}

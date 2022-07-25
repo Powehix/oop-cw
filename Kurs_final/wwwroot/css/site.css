@@ -1,0 +1,599 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+
+/*Настройки для INDEX*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #333;
+    background-color: #f7f4f0;
+}
+
+h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.button {
+    /*font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 60px;
+    padding: 12px 40px;
+    text-align: center;
+    line-height: 16px;
+    border: 0px solid #fff;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s linear;*/
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    outline: 0;
+    background: #eb3d00;
+    width: 150px;
+    border: 0;
+    padding: 15px 85px;
+    color: #FFFFFF;
+    font-size: 15px;
+    transition: color 0.3s ease, background-color 0.3s linear;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.intro_index {
+    height: 300px;
+    width: 500px;
+    margin: 12% auto;
+    text-align: center;
+}
+
+.return {
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: #eb3d00;
+}
+
+    .return:hover {
+        color: #b53001;
+    }
+
+.text_index {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/*Настройки для LOGIN и REGISTER */
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+    .form input {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    .form button {
+        font-family: 'Open Sans', sans-serif;
+        outline: 0;
+        background: #eb3d00;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 15px;
+        transition: color 0.3s ease, background-color 0.3s linear;
+        cursor: pointer;
+    }
+
+        .form button:hover, .form button:active, .form button:focus {
+            background-color: #333;
+            color: #fff;
+        }
+
+    .form .message {
+        margin: 15px 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+    }
+
+        .form .message a {
+            color: #eb3d00;
+            text-decoration: none;
+        }
+
+.login_menu {
+    padding-left: 50px;
+    margin-top: -10px;
+    font-size: 2em;
+}
+
+    .login_menu a {
+        text-decoration: none;
+        color: #5F5F5F;
+        cursor: pointer;
+    }
+
+.icon-chevron_left:hover {
+    color: #9B9B9B
+}
+
+.text-danger {
+    font-size: 14px;
+    color: #eb3d00;
+}
+
+    /*.form .register-form {
+        display: none;
+    }*/
+
+/*Настройки для HOME*/
+
+.container_home {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    height: 85vh;
+
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.head_home {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #B6B6B6;
+}
+
+.logo_home {
+    display: flex;
+    justify-content: space-between;
+    width: 21%;
+    margin: 15px;
+    padding-left: 30px;
+}
+
+.logo_home h2 {
+    margin: auto;
+}
+
+.logo_home img {
+    width: 80px;
+    height: 80px;
+}
+
+.logined_home {
+    width: 30%;
+    margin: auto 60px;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+    .logined_home button {
+        text-decoration: none;
+        outline: 0;
+        background: #fff;
+        border: 0;
+        font-size: 15px;
+        cursor: pointer;
+        color: #eb3d00;
+    }
+
+    .logined_home button:hover {
+        color: #b53001;
+    }
+
+
+.central_home {
+    display: flex;
+    justify-content: space-between;
+    height: 75%;
+}
+
+.menu_home {
+    font-family: 'Open Sans', sans-serif;
+    width: 20%;
+}
+
+.adress_home {
+    display: flex;
+    margin: 20px;
+    font-size: 13px;
+}
+
+.information_home {
+    width: 70%;
+}
+
+        .information_home a {
+            color: #eb3d00;
+        }
+
+            .information_home a:hover {
+                color: #b53001;
+            }
+
+.home-padd {
+    padding-top: 16px;
+}
+
+.date_home {
+    font-size: 13px;
+}
+
+.other_home {
+    width: 20%;
+}
+
+/*Настройки для меню*/
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.accordion-menu {
+    width: 100%;
+    max-width: 200px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+    /*.accordion-menu li.open .dropdownlink {
+        color: #CDDC39;
+    }*/
+
+/*.fa-chevron-down {
+    transform: rotate(180deg);
+}*/
+
+.accordion-menu li:last-child .dropdownlink {
+    border-bottom: 0;
+}
+
+.dropdownlink {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 45px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    color: #212121;
+    position: relative;
+    transition: all 0.4s ease-out;
+}
+
+    .dropdownlink a {
+        color: #212121;
+    }
+
+.dropdownLink i {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+}
+
+/*.fa-chevron-down {
+    right: 12px;
+    left: auto;
+}*/
+
+
+.submenuItems {
+    display: none;
+    /*background: #f9cebe;*/
+}
+
+.submenuItems li {
+    /*border-bottom: 1px solid #B6B6B6;*/
+}
+
+    .submenuItems li:hover {
+        background-color: #f7f4f0;
+    }
+
+.submenuItems a {
+    display: block;
+    color: #727272;
+    padding: 12px 12px;
+    transition: all 0.4s ease-out;
+}
+.submenuItems a:hover {
+    color: #212121;
+}
+
+/*Настройки для списка*/
+
+.table {
+    border-spacing: 0;
+    text-align: center;
+}
+
+    .table td, th {
+        padding: 10px 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+.top_table {
+    display: flex;
+    justify-content: space-between;
+    width: 92.5%;
+    align-items: flex-end;
+}
+
+.table_filter {
+    text-decoration: none;
+    outline: 0;
+    background: #eb3d00;
+    border: 0;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease, background-color 0.3s linear;
+}
+
+.table_filter:hover {
+    background: #b53001;
+}
+
+.search_table {
+
+}
+
+.table-scroll {
+    height: 480px;
+    overflow-y: auto;
+}
+
+/*Настройки для добавления*/
+
+.form-group {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-group input {
+    width: 150px;
+    outline: 0;
+    background: #fff;
+    margin: 0 0 15px;
+    padding: 5px;
+    /*box-sizing: border-box;*/
+    font-size: 14px;
+    /*border: 1px solid #e9835f;*/
+    border: 1px solid #ccc;
+}
+
+.form-group span {
+    color: #eb3d00;
+}
+
+    /*.form-group input:active, .form-group input:focus {
+        outline: 0;
+        background: #fff;
+        border: 1px solid #eb3d00;
+        margin: 0 0 15px;
+        padding: 7px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }*/
+
+.add_head {
+    padding-top: 16px;
+}
+
+.row {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.col-md-4 {
+    width: 80%;
+}
+
+.form-label {
+    /*background: #f2f2f2;*/
+    text-align: right;
+    width: 10%;
+}
+
+.form-input {
+    /*background: #f2f2f2;*/
+    width: 22%;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.form-button {
+    width: 32%;
+    margin-left: 18%;
+}
+
+.btn-btn-default {
+    text-decoration: none;
+    outline: 0;
+    background: #eb3d00;
+    border: 0;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease, background-color 0.3s linear;
+}
+
+    .btn-btn-default:hover {
+        background: #b53001;
+    }
+
+
+/*Настройки DETAILS*/
+
+.details {
+    padding-top: 37px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* свойства модального окна по умолчанию */
+.modal {
+    position: fixed; /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5); /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+    /* при отображении модального окно */
+    .modal:target {
+        opacity: 1; /* делаем окно видимым */
+        pointer-events: auto; /* элемент видим для событий мыши */
+        overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+    }
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 400px;
+        margin: 30px auto; /* для отображения модального окна по центру */
+    }
+}
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid #eceeef;
+}
+
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+/* свойства для кнопки "Закрыть" */
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+    /* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+    .close:focus, .close:hover {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: .75;
+    }
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 5px;
+    overflow: auto;
+    text-align: center;
+}

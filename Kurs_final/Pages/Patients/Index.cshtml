@@ -1,0 +1,176 @@
+﻿@page
+@model Kurs_final.Pages.Patients.IndexModel
+
+@{
+    ViewData["Title"] = "List of patients";
+}
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="main_home">
+        <div class="container_home">
+            <div class="head_home">
+                <div class="logo_home">
+                    <img src="~/images/logo2.png" />
+                    <h2> St. Chill Hospital </h2>
+                </div>
+                <div class="logined_home">
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
+                        <i class="fa fa-user" aria-hidden="true"></i> @UserManager.GetUserName(User)
+                        <button type="submit"> &nbsp E X I T </button>
+                    </form>
+                </div>
+            </div>
+            <div class="central_home">
+                <div class="menu_home">
+                    <ul class="accordion-menu">
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Home">News</a></li>
+                                <li><a asp-page="/Error">Schedule</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-database" aria-hidden="true"></i> Database
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Doctors/Index">List of doctors</a></li>
+                                <li><a asp-page="/Patients/Index">List of patients</a></li>
+                                <li><a asp-page="/Error">My patients</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Error"><i class="fa fa-address-card" aria-hidden="true"></i> My profile </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Contact"><i class="fa fa-phone-square" aria-hidden="true"></i> Contacts </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="information_home">
+
+                    <form>
+                        <p>
+                            <div class="top_table">
+                                <div>
+                                    <h3> List of patients </h3>
+                                    <select asp-for="PatientStatus" asp-items="Model.Status">
+                                        <option value="">All</option>
+                                    </select>
+                                    Name: <input type="text" asp-for="SearchString" class="search_table" />
+                                    <input type="submit" value="Filter" class="table_filter" />
+                                </div>
+                                <div>
+                                    <a asp-page="Add" class="add">Add patient</a>
+                                </div>
+                            </div>
+                        </p>
+                    </form>
+
+
+                    <div id="openModal" class="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title"> </h3>
+                                    <a href="#close" title="Close" class="close">×</a>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-scroll">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Birthday)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Chamber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Telephone)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Adress)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Status)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Patient[0].Doctor)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                @foreach (var item in Model.Patient)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Birthday)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Chamber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Telephone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Adress)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Status)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Doctor)
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                                            @*<a href="#openModal">Details </a> |*@
+                                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                            @*<a href="#openModal">Delete</a>*@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="other_home">
+
+                </div>
+            </div>
+            <div class="adress_home">
+                Riga, Maza Zoltides iela 14a <br />
+                +37128309993 <br />
+                LV-1029
+            </div>
+        </div>
+    </div>
+}

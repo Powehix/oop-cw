@@ -1,0 +1,28 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="login-page">
+    <div class="form">
+        <img src="~/images/logo2.png" />
+        <form method="post" class="login-form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input asp-for="Input.Email" type="text" placeholder="E-mail" class="form-control" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <input asp-for="Input.Password" type="password" placeholder="Password" class="form-control" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            <button type="submit">L O G &nbsp I N</button>
+            <p class="message">Forgot your password? <a asp-page="./ForgotPassword">Click here</a></p>
+            <p class="message">Not registered yet? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register now</a></p>
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="intro_index">
+        <div class="text_index">
+            <h2>Sorry!</h2>
+            <p>This page is not finished yet</p>
+        </div>
+    </div>
+}

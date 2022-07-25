@@ -1,0 +1,85 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="main_home">
+        <div class="container_home">
+            <div class="head_home">
+                <div class="logo_home">
+                    <img src="~/images/logo2.png" />
+                    <h2> St. Chill Hospital </h2>
+                </div>
+                <div class="logined_home">
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
+                        <i class="fa fa-user" aria-hidden="true"></i> @UserManager.GetUserName(User)
+                        <button type="submit"> &nbsp E X I T </button>
+                    </form>
+                </div>
+            </div>
+            <div class="central_home">
+                <div class="menu_home">
+                    <ul class="accordion-menu">
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Home">News</a></li>
+                                <li><a asp-page="/Error">Schedule</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <i class="fa fa-database" aria-hidden="true"></i> Database
+                            </div>
+                            <ul class="submenuItems">
+                                <li><a asp-page="/Doctors/Index">List of doctors</a></li>
+                                <li><a asp-page="/Patients/Index">List of patients</a></li>
+                                <li><a asp-page="/Error">My patients</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Error"><i class="fa fa-address-card" aria-hidden="true"></i> My profile </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdownlink">
+                                <a asp-page="/Contact"><i class="fa fa-phone-square" aria-hidden="true"></i> Contacts </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="information_home">
+                    <div class="home-padd">
+                        <h3> Administration </h3>
+                        Manager of the Riga branch: 28309993<br />
+                        Chief physician: 28309993 <br />
+                        Deputy chief physician: 28309993
+                        <h3> Technical department </h3>
+                        IT Chief: 28309993 <br />
+                        Specialist in communication: 28309993
+                        <h3> Control room </h3>
+                        Information bureau: 28309993 <br />
+                        Hotline: 28309993
+                    </div>
+                </div>
+                <div class="other_home">
+
+                </div>
+            </div>
+            <div class="adress_home">
+                Riga, Maza Zoltides iela 14a <br />
+                +37128309993 <br />
+                LV-1029
+            </div>
+        </div>
+    </div>
+}
